@@ -1,3 +1,5 @@
+import Tasks from "./Tasks";
+
 export default function SelectedProject({ project, onDelete }) {
   const formattedDate = project.dueDate
     ? // If dueDate exists, format it
@@ -28,6 +30,7 @@ export default function SelectedProject({ project, onDelete }) {
           {project.description}
         </p>
       </header>
+      <Tasks />
     </div>
   );
 }
