@@ -1,6 +1,6 @@
 import Button from "./Button.jsx";
 
-export default function ProjectsSidebar({ onStartAddProject }) {
+export default function ProjectsSidebar({ onStartAddProject, projects }) {
   return (
     <aside className="w-1/3 px-8 py-16 bg-stone-900 text-stone-50 md:w-72 rounded-r-xl">
       <h2 className="mb-8 font-bold uppercase md:text-xl text-stone-200">
@@ -9,7 +9,13 @@ export default function ProjectsSidebar({ onStartAddProject }) {
       <div>
         <Button onClick={onStartAddProject}>+ Add Projects</Button>
       </div>
-      <ul></ul>
+      <ul>
+        {projects.map((project) => (
+          <li key={project.key}>
+            <button>{project.title}</button>
+          </li>
+        ))}
+      </ul>
     </aside>
   );
 }
